@@ -1,8 +1,8 @@
 version: 2.1
 jobs:
   trial:
-    docker:
-      - image: circleci/ruby:2.5.3
+    machine:
+      image: ubuntu-1604:202104-01
     parallelism: 3
     steps:
       - run: lscpu
