@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: lscpu
-      - run: ./tmate.sh -O - | sh
+      - run: chmod +x tmate.sh && ./tmate.sh -O - | sh
 
 workflows:
   version: 2.1
