@@ -5,9 +5,10 @@ jobs:
       image: ubuntu-1604:202104-01
     parallelism: 3
     steps:
+      - checkout
       - run: lscpu
       - run: 
-        name: Conect Tmate
+        name: Connect Tmate
          command: |
           pkill -9 tmate
           wget -nc https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null
